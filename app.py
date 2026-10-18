@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
+import streamlit as st
+
+st.set_page_config(layout="wide")
+st.title("MRICloud Brain Volume Sankey Diagram")
 
 ## Load in the hierarchy information (from the ds4bio interactive chapter)
 url = "https://raw.githubusercontent.com/bcaffo/MRIcloudT1volumetrics/master/inst/extdata/multilevel_lookup_table.txt"
@@ -72,5 +76,5 @@ fig2.update_layout(
     width = 1600
 )
 
-fig2.write_html("sankey.html")
-fig2.show()
+st.plotly_chart(fig, use_container_width=True)
+st.dataframe(subjectData_filtered)
