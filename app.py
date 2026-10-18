@@ -53,7 +53,7 @@ for parent, child in zip(path[:-1], path[1:]):
         targets.append(get_node(child,  row[child]))
         values.append(row['volume'])
 
-fig2 = go.Figure(data = [go.Sankey(
+fig = go.Figure(data = [go.Sankey(
     arrangement = "snap",
     node = dict(
         pad = 10,
@@ -69,7 +69,7 @@ fig2 = go.Figure(data = [go.Sankey(
     )
 )])
 
-fig2.update_layout(
+fig.update_layout(
     title_text = f"MRICloud volumes for subject {id}",
     font_size = 9,
     height = 1400
