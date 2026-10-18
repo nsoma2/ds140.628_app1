@@ -72,9 +72,8 @@ fig2 = go.Figure(data = [go.Sankey(
 fig2.update_layout(
     title_text = f"MRICloud volumes for subject {id}",
     font_size = 9,
-    height = 1400,
-    width = 1600
+    height = 1400
 )
 
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig)
 st.dataframe(subjectData_filtered)
